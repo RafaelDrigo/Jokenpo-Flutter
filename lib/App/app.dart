@@ -38,10 +38,10 @@ class _Game extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Pontos Inimigo: $pointsInimigo !'),
+            Text('Pontos do adversário: $pointsInimigo !'),
             Text('Seus pontos: $pointsJogador !'),
-            Text('Resultado ${resultadoGame.resultado}!'),
-            Text('Escolha do App !'),
+            Text('Resultado: ${resultadoGame.resultado}!'),
+            Text('Escolha do Adversário!'),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
