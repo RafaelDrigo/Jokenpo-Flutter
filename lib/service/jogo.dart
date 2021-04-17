@@ -1,13 +1,13 @@
 
 import 'dart:math';
 
-const PEDRA = 'pedra';
-const PAPEL = 'papel';
-const TESOURA = 'tesoura';
+const Pedra = 'pedra';
+const Papel = 'papel';
+const Tesoura = 'tesoura';
 
-const GANHOU = "Ganhou";
-const DERROTA = "Derrota";
-const EMPATE = "Empate";
+const Vitoria = "Vitória";
+const Derrota = "Derrota";
+const Empate = "Empate";
 
 class Resultado {
   final String resultado ;
@@ -24,7 +24,7 @@ class Jogo {
   }
 
     String gerarEscolhaAPP() {
-    var opcoes = [PEDRA, PAPEL, TESOURA ];    
+    var opcoes = [Pedra, Papel, Tesoura ];    
     var escolha = Random().nextInt(opcoes.length);
     return opcoes[escolha];
   }
@@ -32,14 +32,14 @@ class Jogo {
   Resultado verificarResultado(String jogador, String inimigo){
 
     if (jogador == inimigo)
-      return Resultado(EMPATE, inimigo);
+      return Resultado(Empate, inimigo);
 
-    bool jogadorGanhaComPedra = (jogador == PEDRA && inimigo == TESOURA);
-    bool jogadorGanhaComTesoura = (jogador == TESOURA && inimigo == PAPEL);
-    bool jogadorGanhaComPapel = (jogador == PAPEL && inimigo == PEDRA);
+    bool jogadorGanhaComPedra = (jogador == Pedra && inimigo == Tesoura);
+    bool jogadorGanhaComTesoura = (jogador == Tesoura && inimigo == Papel);
+    bool jogadorGanhaComPapel = (jogador == Papel && inimigo == Pedra);
     if (jogadorGanhaComPedra || jogadorGanhaComTesoura || jogadorGanhaComPapel)
-      return Resultado(GANHOU, inimigo);
+      return Resultado(Vitoria, inimigo);
     
-    return Resultado(DERROTA, inimigo);
+    return Resultado(Derrota, inimigo);
   }
 }

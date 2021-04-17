@@ -17,9 +17,9 @@ class _Game extends State<MyHomePage> {
   void jogar(String escolhajogador) {
     Resultado resultadoPartida = Jogo().jogar(escolhajogador);
 
-    if (resultadoPartida.resultado == GANHOU)
+    if (resultadoPartida.resultado == Vitoria)
       pointsJogador++;
-    else if (resultadoPartida.resultado == DERROTA) pointsInimigo++;
+    else if (resultadoPartida.resultado == Derrota) pointsInimigo++;
 
     setState(() {
       this.resultadoGame = resultadoPartida;
@@ -56,18 +56,18 @@ class _Game extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 InkWell(
-                  onTap: () => jogar(PEDRA),
+                  onTap: () => jogar(Pedra),
                   child: Image.asset("assets/images/pedra.png", width: 100),
                 ),
                 InkWell(
-                  onTap: () => jogar(PAPEL),
+                  onTap: () => jogar(Papel),
                   child: Image.asset(
                     "assets/images/papel.png",
                     width: 100,
                   ),
                 ),
                 InkWell(
-                  onTap: () => jogar(TESOURA),
+                  onTap: () => jogar(Tesoura),
                   child: Image.asset("assets/images/tesoura.png", width: 100),
                 ),
               ],
